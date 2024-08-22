@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Shop{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'shop/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+        <h1 class="header-title">Магазин видеокарт</h1>
+    </div>
+        <nav>
+            <a href="{% url 'home_page' %}">Домашняя страница</a>
+           <a href="{% url 'cart_view' %}">Корзина ({{ total_items }})</a>
+           <a href="{% url 'register' %}">Регистрация</a>
+
+        </nav>
+
+
+    </header>
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 TopShop</p>
+    </footer>
+</body>
+</html>
