@@ -1,0 +1,21 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<h1>Видеокарты</h1>
+<div id="products">
+    {% for product in products %}
+        <div class="product">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p>Цена: {{ product.price }}  Руб.</p>
+            <div class="btn-group">
+                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-secondary">Добавить в корзину</a>
+                <button class="btn btn-secondary" type="button">Подробнее</button>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

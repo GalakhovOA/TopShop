@@ -1,0 +1,55 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="{% static 'shop/css/styles.css' %}">
+</head>
+<body>
+    <h1>Корзина</h1>
+    <div id="cart-items">
+        {% for item in cart_items %}
+        <div class="cart-item" id="cart-item-{{ item.id }}">
+            <div class="product-details">
+                <h4>{{ item.product.name }}</h4>
+                <p> {{ item.product.price }}  ₽ x {{ item.quantity }}</p>
+            </div>
+            <form method="post" action="{% url 'remove_from_cart' item.id %}">
+                {% csrf_token %}
+                <button type="submit" class="remove-item">
+                    &#10005;
+                </button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="cart-container">
+    <div class="cart-items">
+
+    </div>
+
+    <div class="cart-summary">
+        <div class="total-price">
+            Итоговая сумма: <strong> {{ total_price }} Рублей </strong>
+        </div>
+
+        <button class="buy-button" type="button">
+            Купить
+        </button>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+{% endblock %}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/shop/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="header-title">Магазин видеокарт</h1>
+        </div>
+        <nav>
+            <a href="/1">Домашняя страница</a>
+            <a href="/cart/">Корзина (3)</a>
+            <a href="/register/">Регистрация</a>
+        </nav>
+    </header>
+
+    <div id="content">
+        <div class="login-container">
+            <h1>Вход в систему</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_username">Имя пользователя:</label>
+                    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+                </div>
+                <div class="form-group">
+                    <label for="id_password">Пароль:</label>
+                    <input type="password" name="password" autocomplete="current-password" required id="id_password">
+                </div>
+                <button type="submit" class="btn">Войти</button>
+            </form>
+            <div class="register-link">
+                <p>Нет аккаунта? <a href="/register/">Зарегистрироваться</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
