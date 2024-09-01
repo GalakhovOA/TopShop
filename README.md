@@ -8,6 +8,8 @@
 
 .venv\Scripts\activate или venv\Scripts\activate
 
+Перейдите в основную папку cd myshop
+
 Выполнить миграцию БД: python manage.py makemigrations python manage.py migrate
 
 Запустите проект командой python manage.py runserver
