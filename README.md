@@ -10,6 +10,8 @@
 
 Перейдите в основную папку cd myshop
 
+Может потребоваться установка Pillow, при требовании установки, введитие команду python -m pip install Pillow
+
 Выполнить миграцию БД: python manage.py makemigrations python manage.py migrate
 
 Запустите проект командой python manage.py runserver
