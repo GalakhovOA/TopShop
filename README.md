@@ -12,7 +12,7 @@
 
 Может потребоваться установка Pillow, при требовании установки, введитие команду python -m pip install Pillow
 
-Выполнить миграцию БД: python manage.py makemigrations python manage.py migrate
+Выполнить миграцию БД: python manage.py makemigrations python manage.py migrate при необходимости
 
 Запустите проект командой python manage.py runserver
 
